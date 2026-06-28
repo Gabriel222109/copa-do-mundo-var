@@ -56,8 +56,6 @@ li {
     margin: 8px;
 }
 
-/* FORMULÁRIO */
-
 form {
     background: rgb(255, 255, 255);
     width: 400px;
@@ -72,7 +70,6 @@ label {
     margin-top: 10px;
 }
 
-/* ===== NOVAS CLASSES ADICIONADAS ===== */
 .textlabel {
     font-weight: bold;
     color: #1a5f2a;
@@ -108,7 +105,6 @@ label {
     outline: none;
     box-shadow: 0 0 5px rgba(26, 95, 42, 0.3);
 }
-/* ==================================== */
 
 input, select {
     width: 100%;

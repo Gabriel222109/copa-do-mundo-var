@@ -1,4 +1,3 @@
-
 // Exercício 1 - Mensagem de boas-vindas ao entrar na página
 window.onload = function() {
     alert("Bem-vindo ao portal da Seleção Portuguesa!");
@@ -10,17 +9,17 @@ const titulo = document.getElementById("titulo");
 // Cor original do título
 const corOriginal = titulo.style.color || "#ffffff";
 
-// Ao passar o mouse mudar cor
+// Ao passar o mouse muda a cor
 titulo.onmouseover = function() {
-    titulo.style.color = "#ffcc00"; // amarelo/dourado
+    titulo.style.color = "#ffcc00";
 };
 
-// Quando o mouse sair voltar à cor original
+// Quando o mouse sair volta à cor original
 titulo.onmouseout = function() {
     titulo.style.color = corOriginal;
 };
 
-// Ao clicar no título aparecer mensagem de incentivo
+// Ao clicar no título aparece uma mensagem de incentivo
 titulo.onclick = function() {
     alert("Para cima Portugal! Rumo ao Hexa!");
 };
@@ -37,7 +36,7 @@ function mudar_curiosidade() {
 // Exercício Extra - Interação com a imagem
 const imagem = document.getElementById("imagem-selecao");
 
-// Ao clicar na imagem → troca por outra imagem da seleção
+// Ao clicar na imagem troca por outra
 imagem.onclick = function() {
     if (imagem.src.includes("SNAA4jpgjpg.jpeg")) {
         // Troca para outra imagem relacionada (bandeira)
@@ -48,13 +47,13 @@ imagem.onclick = function() {
     }
 };
 
-// Ao passar o mouse sobre a imagem → aumenta o tamanho
+// Ao passar o mouse sobre a imagem aumenta o tamanho
 imagem.onmouseover = function() {
     imagem.style.transition = "transform 0.3s ease";
     imagem.style.transform = "scale(1.1)";
 };
 
-// Quando o mouse sair da imagem → volta ao tamanho normal
+// Quando o mouse sair da imagem volta ao tamanho normal
 imagem.onmouseout = function() {
     imagem.style.transform = "scale(1)";
 };
