@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #597f66;
+    padding: 30px;
+    color: #222;
+}
+
+h1 {
+    text-align: center;
+    color: rgb(255, 255, 255);
+    margin-bottom: 20px;
+}
+
+h2 {
+    text-align: center;
+    color: rgb(255, 0, 0);
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+h3 {
+    text-align: center;
+    color: rgb(255, 0, 0);
+    margin-top: 15px;
+}
+
+p {
+    background: rgb(210, 216, 211);
+    border: 5px solid red;
+    padding: 15px;
+    border-radius: 10px;
+    line-height: 1.5;
+}
+
+img {
+    display: block;
+    width: 70%;
+    margin: 20px auto;
+    border-radius: 15px;
+}
+
+ul {
+    background: rgb(210, 216, 210);
+    border: 5px solid red;
+    padding: 20px 40px;
+    border-radius: 10px;
+}
+
+li {
+    margin: 8px;
+}
+
+/* FORMULÁRIO */
+
+form {
+    background: rgb(255, 255, 255);
+    width: 400px;
+    max-width: 100%;
+    margin: auto;
+    padding: 25px;
+    border-radius: 15px;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+/* ===== NOVAS CLASSES ADICIONADAS ===== */
+.textlabel {
+    font-weight: bold;
+    color: #1a5f2a;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.email {
+    font-weight: bold;
+    color: #1a5f2a;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.pais {
+    font-weight: bold;
+    color: #1a5f2a;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.campotexto {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.campotexto:focus {
+    border-color: #1a5f2a;
+    outline: none;
+    box-shadow: 0 0 5px rgba(26, 95, 42, 0.3);
+}
+/* ==================================== */
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+}
+
+button {
+    margin-top: 20px;
+    width: 100%;
+    padding: 12px;
+    background: green;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: darkgreen;
+}
+
+/* TABELA */
+
+table {
+    width: 80%;
+    margin: auto;
+    background: white;
+    border-collapse: collapse;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+th {
+    background: green;
+    color: white;
+    padding: 15px;
+}
+
+td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+}

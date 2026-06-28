@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Torcedores</title>
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+
+<body>
+    <form action="./resultados.html">
+        <label class="textlabel">Nome:</label>
+        <input class="campotexto" id="nome" name="nome" required><br><br>
+
+        <label class="textlabel">Data de Nascimento:</label>
+        <input class="campotexto" type="date" id="data_nascimento" name="data_nascimento" required><br><br>
+
+        <label class="email">Email:</label>
+        <input class="campotexto" type="email" id="email" name="email" required><br><br>
+
+        <label class="pais">País:</label>
+        <select class="campotexto" id="pais" name="pais" required>
+            <option value="">Selecione um país</option>
+            <option value="Portugal">Portugal</option>
+            <option value="Brasil">Brasil</option>
+            <option value="Espanha">Espanha</option>
+            <option value="França">França</option>
+            <option value="Inglaterra">Inglaterra</option>
+        </select><br><br>
+        <label for="jogador_favorito">Jogador Favorito:</label>
+        <select class="campotexto" id="jogador_favorito" name="jogador_favorito" required>
+        <option value="">Selecione um jogador</option>
+        <option value="Diogo Costa">Diogo Costa</option>
+        <option value="José Sá">José Sá</option>
+        <option value="Rui Silva">Rui Silva</option>
+        <option value="Ricardo Velho">Ricardo Velho</option>
+        <option value="Rúben Dias">Rúben Dias</option>
+        <option value="Gonçalo Inácio">Gonçalo Inácio</option>
+        <option value="Tomás Araújo">Tomás Araújo</option>
+        <option value="Renato Veiga">Renato Veiga</option>
+        <option value="Diogo Dalot">Diogo Dalot</option>
+        <option value="Nélson Semedo">Nélson Semedo</option>
+        <option value="João Cancelo">João Cancelo</option>
+        <option value="Nuno Mendes">Nuno Mendes</option>
+        <option value="Rúben Neves">Rúben Neves</option>
+        <option value="João Neves">João Neves</option>
+        <option value="Samú Costa">Samú Costa</option>
+        <option value="Vitinha">Vitinha</option>
+        <option value="Bruno Fernandes">Bruno Fernandes</option>
+        <option value="Bernardo Silva">Bernardo Silva</option>
+        <option value="Matheus Nunes">Matheus Nunes</option>
+        <option value="Cristiano Ronaldo">Cristiano Ronaldo</option>
+        <option value="João Félix">João Félix</option>
+        <option value="Francisco Trincão">Francisco Trincão</option>
+        <option value="Gonçalo Ramos">Gonçalo Ramos</option>
+        <option value="Pedro Neto">Pedro Neto</option>
+        <option value="Francisco Conceição">Francisco Conceição</option>
+        <option value="Rafael Leão">Rafael Leão</option>
+        <option value="Gonçalo Guedes">Gonçalo Guedes</option>
+        </select><br><br>
+
+        <button id="enviar" type="submit">Enviar</button>
+    </form>
+</body>
+</html>
