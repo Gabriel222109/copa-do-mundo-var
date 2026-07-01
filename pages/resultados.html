@@ -5,10 +5,150 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resultado do Cadastro</title>
     <link rel="stylesheet" href="../css/index.css">
+    <style>
+        .resultado-container {
+            background: white;
+            max-width: 500px;
+            margin: 30px auto;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .resultado-container h2 {
+            color: #1a5f2a;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        .dado {
+            margin-bottom: 15px;
+            padding: 12px 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #1a5f2a;
+        }
+        .dado strong {
+            color: #1a5f2a;
+            display: inline-block;
+            width: 180px;
+        }
+        .classificacao {
+            margin-top: 30px;
+            padding: 25px;
+            background: #e8f5e9;
+            border: 3px solid #1a5f2a;
+            border-radius: 15px;
+            text-align: center;
+        }
+        .classificacao h3 {
+            margin: 0 0 15px 0;
+            color: #1a5f2a;
+            font-size: 1.3em;
+        }
+       
+        .classificacao-texto {
+            font-size: 1.8em;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        .idade {
+            font-size: 1.8em;           
+            margin: px;
+             font-size: 1.2em;        
+            font-weight: bold;
+            color: #1a5f2a;
+        }
+
+    </style>
 </head>
 <body>
     <h1>CADASTRO FINALIZADO COM SUCESSO!</h1>
-    
-    <script src="../js/script.js"></script>
+
+    <div class="resultado-container">
+        <h2>Dados do Torcedor</h2>
+        
+        <div id="dados-torcedor"></div>
+
+        <div class="classificacao">
+            <h3>Classificação do Torcedor</h3>
+            <p id="idade"></p>
+            <p id="classificacao" class="classificacao-texto"></p>
+        </div>
+    </div>
+
+    <form action="./index.html" method="GET">
+        <button id="enviar" type="submit">Continuar</button>
+    </form>
+
+    <script>
+        // Função melhorada para calcular idade
+        function calcularIdade(dataNascimentoStr) {
+            if (!dataNascimentoStr) return 0;
+
+            const [ano, mes, dia] = dataNascimentoStr.split('-').map(Number);
+            const hoje = new Date();
+
+            let idade = hoje.getFullYear() - ano;
+
+            // Verifica se já fez aniversário este ano
+            if (hoje.getMonth() + 1 < mes || 
+               (hoje.getMonth() + 1 === mes && hoje.getDate() < dia)) {
+                idade--;
+            }
+
+            return idade;
+        }
+
+        function classificarTorcedor(idade) {
+            if (idade <= 16) {
+                return { texto: "Torcedor Mirim", cor: "#2196F3" };
+            } else if (idade <= 30) {
+                return { texto: "Torcedor Novato", cor: "#4CAF50" };
+            } else {
+                return { texto: "Torcedor Experiente", cor: "#FF5722" };
+            }
+        }
+
+        // Obter parâmetros da URL
+        const params = new URLSearchParams(window.location.search);
+
+        const nome = params.get('nome') || 'Não informado';
+        const dataNascimento = params.get('data_nascimento') || '';
+        const email = params.get('email') || 'Não informado';
+        const pais = params.get('pais') || 'Não informado';
+        const jogadorFavorito = params.get('jogador_favorito') || 'Não informado';
+
+        // Calcular idade e classificação
+        let idade = 0;
+        let classificacaoInfo = { texto: '', cor: '' };
+
+        if (dataNascimento) {
+            idade = calcularIdade(dataNascimento);
+            classificacaoInfo = classificarTorcedor(idade);
+        }
+
+        // Exibir os dados do formulário
+        const container = document.getElementById('dados-torcedor');
+        container.innerHTML = `
+            <div class="dado"><strong>Nome:</strong> ${nome}</div>
+            <div class="dado"><strong>Data de Nascimento:</strong> ${dataNascimento || 'Não informado'}</div>
+            <div class="dado"><strong>Email:</strong> ${email}</div>
+            <div class="dado"><strong>País:</strong> ${pais}</div>
+            <div class="dado"><strong>Jogador Favorito:</strong> ${jogadorFavorito}</div>
+        `;
+
+        // Exibir idade e classificação
+        const idadeEl = document.getElementById('idade');
+        const classEl = document.getElementById('classificacao');
+
+        if (dataNascimento && idade >= 0) {
+            idadeEl.innerHTML = `Idade: <span class="idade">${idade} anos</span>`;
+            classEl.innerHTML = classificacaoInfo.texto;
+            classEl.style.color = classificacaoInfo.cor;
+        } else {
+            idadeEl.innerHTML = "Idade: Não foi possível calcular";
+            classEl.innerHTML = "Classificação indisponível";
+        }
+    </script>
 </body>
 </html>

@@ -21,7 +21,7 @@ h2 {
     text-align: center;
     color: rgb(255, 0, 0);
     margin-top: 25px;
-    margin-bottom: 10px;
+    margin-bottom:50px;
 }
 
 h3 {
@@ -113,9 +113,9 @@ input, select {
 }
 
 button {
-    margin-top: 20px;
+    margin-top: 2px;
     width: 100%;
-    padding: 12px;
+    padding: 15px;
     background: green;
     color: white;
     border: none;
@@ -130,11 +130,13 @@ button:hover {
 /* TABELA */
 
 table {
-    width: 80%;
-    margin: auto;
-    background: white;
+    width:100%;
     border-collapse: collapse;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin-top: 20px;
+    overflow: hidden;
+    border-radius: 10px;
+    border: none;
+
 }
 
 th {
@@ -147,4 +149,56 @@ td {
     padding: 12px;
     text-align: center;
     border: 1px solid #ddd;
+}
+
+/* MENU */
+
+.Menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+
+    list-style: none;
+
+    margin: 40px auto 20px;
+    padding: 0;
+
+    width: 70%;
+}
+
+
+.Menu li {
+    list-style: none;
+}
+
+
+.Menu a {
+
+    background-color: green;
+
+    color: white;
+
+    padding: 12px 35px;
+
+    border-radius: 30px;
+
+    text-decoration: none;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+
+    transition: 0.3s;
+}
+
+
+.Menu a:hover {
+
+    background-color: red;
+
+    transform: scale(1.1);
+
 }

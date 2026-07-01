@@ -57,3 +57,20 @@ imagem.onmouseover = function() {
 imagem.onmouseout = function() {
     imagem.style.transform = "scale(1)";
 };
+
+//alterar cor da tabela de classificação
+function mudar_cor1() {
+    document.getElementById("escocia").style.color = "#23c145";
+}
+
+function mudar_cor2() {
+    document.getElementById("brasil").style.color = "#23c145";
+}
+
+function mudar_cor3() {
+    document.getElementById("marrocos").style.color = "#23c145";
+}
+
+function mudar_cor4() {
+    document.getElementById("haiti").style.color = "#ff0000";
+}

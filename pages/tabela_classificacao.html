@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../css/index.css">
 </head>
 <body>
-
+     <form action="./index.html" method="GET">
     <h2>Grupo C - Copa do Mundo FIFA 2026</h2>
 
     <table>
@@ -18,30 +18,32 @@
                 <th>Vitórias</th>
             </tr>
         </thead>
+
         <tbody>
             <tr>
-                <td>Escócia</td>
+                <td id="escocia" onmousemove="mudar_cor1()" onmouseout="retornar_cor1()">Escócia</td>
                 <td>6</td>
                 <td>2</td>
             </tr>
+            
             <tr>
-                <td>Brasil</td>
+                <td id="brasil" onmousemove="mudar_cor2()" onmouseout="retornar_cor2()">Brasil</td>
                 <td>5</td>
                 <td>2</td>
             </tr>
             <tr>
-                <td>Marrocos</td>
+                <td id="marrocos" onmousemove="mudar_cor3()" onmouseout="retornar_cor3()">Marrocos</td>
                 <td>3</td>
                 <td>1</td>
             </tr>
             <tr>
-                <td>Haiti</td>
+                <td id="haiti" onmousemove="mudar_cor4()" onmouseout="retornar_cor4()">Haiti</td>
                 <td>1</td>
                 <td>0</td>
             </tr>
         </tbody>
     </table>
 
-    <script src="../js/script.js"></script>
+    <button id="enviar" type="submit">Voltar</button>
 </body>
 </html>
