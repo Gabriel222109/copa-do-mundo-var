@@ -179,7 +179,7 @@ tr:hover {
 
 .Menu a {
 
-    background-color: green;
+    background-color: rgb(0, 128, 0);
 
     color: white;
 
@@ -260,7 +260,7 @@ tr:hover {
     font-size: 1.2em;        
     font-weight: bold;
     color: #1a5f2a;
-        }
+}
 
     #logo {
     display: block;
@@ -268,4 +268,13 @@ tr:hover {
     margin: 20px auto;
     height: auto;
     filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+}
+
+    #resultado-tbody {
+    background: rgb(0, 128, 0);
+    border: 2px solid #000000;
+}
+
+    #table, th, td {
+    border: 2px solid #000;
 }

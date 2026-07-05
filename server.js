@@ -21,6 +21,7 @@ const servidor = http.createServer(async (req, res) => {
     if (req.url === '/api/usuarios' && req.method === 'GET') {
         const usuarios = db.prepare('SELECT * FROM usuarios ORDER BY id DESC').all();
         res.setHeader('Content-Type', 'application/json');
+        console.log(usuarios);
         res.end(JSON.stringify(usuarios));
         return;
     }
@@ -32,7 +33,7 @@ const servidor = http.createServer(async (req, res) => {
         
         db.prepare("INSERT INTO usuarios (nome, data_nascimento, email, pais, jogador_favorito) VALUES (?, ?, ?, ?, ?)") 
           .run(dados.nome, dados.data_nascimento, dados.email, dados.pais, dados.jogador_favorito);
-        
+        console.log('Dados inseridos com sucesso:', dados);
         res.end('ok');
         return;
     }

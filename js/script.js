@@ -72,8 +72,8 @@ function getInputs(){
         nome: document.getElementById('nome'),
         data_nascimento: document.getElementById('data_nascimento'),
         email: document.getElementById('email'),
-        pais: document.getElementById('select_pais'),
-        select_jogador: document.getElementById('select_jogador')
+        pais: document.getElementById('pais'),
+        select_jogador: document.getElementById('jogador_favorito')
     };
 }
 
@@ -90,14 +90,14 @@ function getValores({nome, data_nascimento, email, pais, select_jogador}){
 async function cadastrar(){
     const inputs = getInputs();
     const dados = getValores(inputs);
-
+    console.log('passe aqui');
     await fetch('/api/usuarios', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(dados)
     });
 
-    window.location.href = '../pages/resultado.html';
+    window.location.href = './../pages/resultados.html';
 }
 
 function calcularIdade(dataNascimento) {
@@ -109,8 +109,8 @@ function calcularIdade(dataNascimento) {
 }
 
 async function mostrarResultado(){
-    const resultadoDiv = document.getElementById('exibir_resultado');
-    
+    const resultadoDiv = document.getElementById('resultado');
+    console.log('passei aqui2');
     const resposta = await fetch('/api/usuarios');
     const usuarios = await resposta.json();
 
@@ -119,7 +119,7 @@ async function mostrarResultado(){
         return;
     }
 
-    let html = '<table><thead><tr><th>ID</th><th>Nome</th><th>Email</th><th>País</th><th>Data de Nascimento</th><th>Idade</th><th>Jogador Favorito</th></tr></thead><tbody>';
+    let html = '<table><thead><tr><th>ID</th><th>Nome</th><th>Email</th><th>País</th><th>Data de Nascimento</th><th>Idade</th><th>Jogador Favorito</th></tr></thead><tbody id="resultado-tbody">';
     
     for (const usuario of usuarios) {
         const idade = calcularIdade(usuario.data_nascimento);
@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    if (document.getElementById('exibir_resultado')) {
+    if (document.getElementById('resultado')) {
         mostrarResultado();
     }
 });
